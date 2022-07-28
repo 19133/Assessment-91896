@@ -12,22 +12,5 @@
 
 # Ask the user if they would like extra sugar, fat, or calories. If they say yes, add extra money to the cost 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Recommend what item the user should buy depending on how much money they have
 
