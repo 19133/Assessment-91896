@@ -17,5 +17,3 @@ print("Welcome to the Price Comparison Tool")
 name = not_blank ("What is your amazing name: ")
 
 print("Kia ora", name)
-
-
