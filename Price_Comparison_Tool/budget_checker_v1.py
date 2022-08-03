@@ -14,11 +14,13 @@ def not_blank(question):
 # Main routine starts here
 
 print("Welcome to the Price Comparison Tool")
+
+# Ask user what their name is
 name = not_blank ("What is your amazing name: ")
 
 print("Kia ora", name)
 
+# Ask user what their budget is
 print("What is your budget", name)
 budget = input()
 print("Thanks for letting us know that you have", budget)
-

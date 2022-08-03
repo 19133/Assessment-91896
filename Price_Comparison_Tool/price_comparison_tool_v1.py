@@ -10,6 +10,6 @@
 
 # Tell the user how much money it would cost to purchase that item with their desired increments
 
-# Ask the user if they would like extra sugar, fat, or calories. If they say yes, add extra money to the cost 
+# Ask the user if they would like extra sugar, fat, or calories. If they say yes, add extra money to the total cost 
 
 # Recommend what item the user should buy depending on how much money they have
