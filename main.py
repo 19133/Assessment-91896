@@ -1,24 +1,21 @@
-# Functions go here
 
-def not_blank(question):
-  Valid = False
-
-  while not Valid:   
-    response = input(question)
-    
-    if response != "":
-      return response
-    else:
-      print("Sorry - this can't be blank")
+# Functions
+def budget_checker (question, low, high):
+  error = "please enter a whole number between 1 and 1000; we do not allow numbers above 1000 as we don't have change\n"
+  valid = False
+  while not valid:
+    try:
+      response = int(input(question))
+      if 0 < response <= 1000:
+        return response
+      else:
+        print(error)
+    except ValueError:
+     print(error)
 
 # Main routine starts here
 
-print("Welcome to the Price Comparison Tool")
-name = not_blank ("What is your amazing name: ")
-
-print("Kia ora", name)
-
-print("What is your budget", name)
-budget = input()
-print("Thanks for letting us know that you have", budget)
-
+# Ask user what their budget is     
+budget = budget_checker ("How much money do you have ", 0, 1000)
+print("You will be spending ${}".format(budget))
+print()
