@@ -20,7 +20,7 @@ def budget_checker (question, low, high):
   valid = False
   while not valid:
     try:
-      response = int(input(question))
+      response = float(input(question))
       # If the user types a whole number between 1 and 1000, program continues 
       if 0 < response <= 1000:
         return response
