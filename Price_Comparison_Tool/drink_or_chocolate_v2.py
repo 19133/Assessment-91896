@@ -20,6 +20,8 @@ def menu():
   print("| Kit Kat                    |  $3.38  |")
   print()
 
+
+  
 # Functions
 
 def drink_or_chocolate(question):
@@ -40,6 +42,8 @@ def drink_or_chocolate(question):
       print()
 
 # Main routine goes here
+
+menu()
 
 choice = drink_or_chocolate("Would you like a drink or a chocolate")
 print("You will be purchasing a {}".format(choice))
