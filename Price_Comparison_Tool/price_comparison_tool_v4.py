@@ -201,4 +201,3 @@ if choice =="drink":
 
     else:
       print(amount_error)
-
