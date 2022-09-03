@@ -1,5 +1,5 @@
 # Error Messages
-budget_error = "please enter a whole number between 1 and 1000; we do not allow numbers above 1000 as we don't have change\n"
+budget_error = "please enter a whole number between 1 and 1000; we do not allow numbers above 10000 as we don't have change\n"
 
 amount_error = "please enter a whole number that is greater then 100 but less than or equal to 10000\n"
 
@@ -16,6 +16,7 @@ def not_blank(question):
       return response
     else:
       print("Sorry - this can't be blank")
+      print()
 
 # Budget Checker
 def budget_checker (question, low, high):
@@ -30,7 +31,7 @@ def budget_checker (question, low, high):
         return rounded_budget
       else:
         # If the user types a number with a decimal or a number that is written in letters, print an error
-        print(error)
+        print(budget_error)
     except ValueError:
      print(budget_error)
       
@@ -65,7 +66,7 @@ def item_amount (question, low, high):
         # If the user types a number with a decimal or a number that is written in letters, print an error
         print(amount_error)
     except ValueError:
-     print(error)
+     print(amount_error)
 
 # Menu with prices
 def menu():
@@ -78,7 +79,6 @@ def menu():
   print("| Monster                    |  $0.70  |")
   print("| V                          |  $0.60  |")
   
-
   print()
   print("| Chocolates (Cost Per 100g):|  Price: |")
   print("| M&Ms                       |  $2.78  |")
@@ -161,19 +161,27 @@ if choice == "chocolate":
     if 100 < amount <= 10000:
       
       paying_amount = amount/100 * price_per_100
+      rounded_amount = round(amount, 2)
       rounded_paying_amount = round(paying_amount, 2)
   
-      if budget > rounded_paying_amount:
+      if budget >= rounded_paying_amount:
         change = budget - rounded_paying_amount
         rounded_change = round(change, 2)
-        print("{}g of {} will cost ${}".format(amount, chocolate_choice, rounded_paying_amount))
-        print("Your change will be ${}".format(rounded_change))
-        break
+        print("{}g of {} will cost ${}".format(rounded_amount, chocolate_choice, rounded_paying_amount))
+        if rounded_change == 0:
+          print("Thanks for coming by!")
+          break
+          
+        else: 
+          print("Your change will be ${}".format(rounded_change))
+          print("Thanks for coming by!")
+          break
   
-      elif budget < rounded_paying_amount:
-        print("You don't seem to have enough money to purchase {}ml of {}".format(amount, chocolate_choice))
+      elif budget <= rounded_paying_amount:
+        print("You don't seem to have enough money to purchase {}g of {}".format(amount, chocolate_choice))
         maximum_amount = budget/price_per_100 *100 
-        print("The maximum amount you can purchase is {}ml".format(maximum_amount))
+        rounded_maximum_amount = round(maximum_amount, 2)
+        print("The maximum amount you can purchase is {}g".format(rounded_maximum_amount))
         print()
     
     else:
@@ -185,19 +193,27 @@ if choice =="drink":
     if 100 < amount <= 10000:
       
       paying_amount = amount/100 * price_per_100
+      rounded_amount = round(amount, 2)
       rounded_paying_amount = round(paying_amount, 2)
   
-      if budget > rounded_paying_amount:
+      if budget >= rounded_paying_amount:
         change = budget - rounded_paying_amount
         rounded_change = round(change, 2)
-        print("{}ml of {} will cost ${}".format(amount, drink_choice, rounded_paying_amount))
-        print("Your change will be ${}".format(rounded_change))
-        break
+        print("{}ml of {} will cost ${}".format(rounded_amount, drink_choice, rounded_paying_amount))
+        if rounded_change == 0:
+          print("Thanks for coming by!")
+          break
+          
+        else: 
+          print("Your change will be ${}".format(rounded_change))
+          print("Thanks for coming by!")
+          break
   
-      elif budget < rounded_paying_amount:
+      elif budget <= rounded_paying_amount:
         print("You don't seem to have enough money to purchase {}ml of {}".format(amount, drink_choice))
         maximum_amount = budget/price_per_100 *100
-        print("The maximum amount you can purchase is {}ml".format(maximum_amount))
+        rounded_maximum_amount = round(maximum_amount, 2)
+        print("The maximum amount you can purchase is {}ml".format(rounded_maximum_amount))
         print()
 
     else:
