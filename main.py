@@ -1,4 +1,3 @@
-
 # Error Messages
 budget_error = "please enter a whole number between 1 and 1000; we do not allow numbers above 1000 as we don't have change\n"
 
@@ -156,7 +155,7 @@ paying_amount= 0
 
 if choice == "chocolate":
   while True:
-    amount = item_amount ("How many grams of {} would you like (the maximum amount is 1000g\n".format(chocolate_choice),100,10000)
+    amount = item_amount ("How many grams of {} would you like?\n".format(chocolate_choice),100,10000)
     
     
     if 100 < amount <= 10000:
@@ -172,16 +171,17 @@ if choice == "chocolate":
         break
   
       elif budget < rounded_paying_amount:
-        print("You don't seem to have enough money to purchase {}ml of {}".format(price_per_100, chocolate_choice))
-        maximum_amount = budget/price_per_100 *price_per_100
+        print("You don't seem to have enough money to purchase {}ml of {}".format(amount, chocolate_choice))
+        maximum_amount = budget/price_per_100 *100 
         print("The maximum amount you can purchase is {}ml".format(maximum_amount))
+        print()
     
     else:
       print(amount_error)
   
 if choice =="drink":
   while True:
-    amount = item_amount ("How many mililitres of {} would you like(the maximum amount is 1000ml\n".format(drink_choice),100,10000)
+    amount = item_amount ("How many mililitres of {} would you like?\n".format(drink_choice),100,10000)
     if 100 < amount <= 10000:
       
       paying_amount = amount/100 * price_per_100
@@ -195,9 +195,10 @@ if choice =="drink":
         break
   
       elif budget < rounded_paying_amount:
-        print("You don't seem to have enough money to purchase {}ml of {}".format(price_per_100, drink_choice))
-        maximum_amount = budget/price_per_100 *price_per_100
+        print("You don't seem to have enough money to purchase {}ml of {}".format(amount, drink_choice))
+        maximum_amount = budget/price_per_100 *100
         print("The maximum amount you can purchase is {}ml".format(maximum_amount))
+        print()
 
     else:
       print(amount_error)
