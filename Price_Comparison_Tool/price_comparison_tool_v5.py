@@ -175,7 +175,7 @@ if choice == "chocolate":
           print("Thanks for coming by!")
           break
   
-      elif budget <= rounded_paying_amount:
+      elif budget < rounded_paying_amount:
         print("You don't seem to have enough money to purchase {}g of {}".format(amount, chocolate_choice))
         maximum_amount = budget/price_per_100 *100 
         rounded_maximum_amount = round(maximum_amount, 2)
@@ -207,7 +207,7 @@ if choice =="drink":
           print("Thanks for coming by!")
           break
   
-      elif budget <= rounded_paying_amount:
+      elif budget < rounded_paying_amount:
         print("You don't seem to have enough money to purchase {}ml of {}".format(amount, drink_choice))
         maximum_amount = budget/price_per_100 *100
         rounded_maximum_amount = round(maximum_amount, 2)

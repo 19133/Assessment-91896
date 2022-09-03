@@ -1,5 +1,21 @@
-# Functions
+amount_error = "please enter a number that is greater then 0 but less than or equal to 10000\n"
 
+# Amount of item
+def item_amount (question, low, high):
+  valid = False
+  while not valid:
+    try:
+      response = float(input(question))
+      # If the user types a whole number between 1 and 10000, program continues 
+      if 0 <= response <= 10000:
+        return response
+      else:
+        # If the user types a number with a decimal or a number that is written in letters, print an error
+        print(amount_error)
+    except ValueError:
+     print(amount_error)
+
+# drink or chocolate
 def drink_or_chocolate(question):
   valid=False
   while not valid:
@@ -90,48 +106,63 @@ if choice == "drink":
       print("Please enter a {} that is on the menu".format(choice))
       print()
 
-if choice == "drink":
-  amount = input("How many mililitres of {} would you like?\n".format(drink_choice),0,10000)
-  if amount == 100:
-    price_per_100ml * 1
-    print("A {} will cost {}".format(price_per_100))
+if choice =="drink":
+  while True:
+    amount = item_amount ("How many mililitres of {} would you like?\n".format(drink_choice),100,10000)
+    if amount == 100:
+      price_per_100 * 1
+      print("A {} will cost {}".format(drink_choice, price_per_100))
+      break
 
-  if amount == 200:
-    price_per_100ml * 2
-    print("A {} will cost {}".format(price_per_100))
-    
-  if amount == 300:
-    price_per_100ml * 3
-    print("A {} will cost {}".format(price_per_100))
+    if amount == 200:
+      price_per_100 * 2
+      print("A {} will cost {}".format(drink_choice, price_per_100))
+      break
+      
+    if amount == 300:
+      price_per_100 * 3
+      print("A {} will cost {}".format(drink_choice, price_per_100))
+      break
+  
+    if amount == 400:
+      price_per_100 * 4
+      print("A {} will cost {}".format(drink_choice, price_per_100))
+      break
+  
+    if amount == 400:
+      price_per_100 * 4
+      print("A {} will cost {}".format(drink_choice, price_per_100))
+      break
+  
+    if amount == 500:
+      price_per_100 * 5
+      print("A {} will cost {}".format(drink_choice, price_per_100))
+      break
+  
+    if amount == 600:
+      price_per_100 * 6
+      print("A {} will cost {}".format(drink_choice, price_per_100))
+      break
+  
+    if amount == 700:
+      price_per_100 * 7
+      print("A {} will cost {}".format(drink_choice, price_per_100))
+      break
+  
+    if amount == 800:
+      price_per_100 * 8
+      print("A {} will cost {}".format(drink_choice, price_per_100))
+      break
+  
+    if amount == 900:
+      price_per_100 * 9
+      print("A {} will cost {}".format(drink_choice, price_per_100))
+      break
+  
+    if amount == 1000:
+      price_per_100 * 10
+      print("A {} will cost {}".format(drink_choice, price_per_100))
+      break
 
-  if amount == 400:
-    price_per_100ml * 4
-    print("A {} will cost {}".format(price_per_100))
-
-  if amount == 400:
-    price_per_100ml * 4
-    print("A {} will cost {}".format(price_per_100))
-
-  if amount == 500:
-    price_per_100ml * 5
-    print("A {} will cost {}".format(price_per_100))
-
-  if amount == 600:
-    price_per_100ml * 6
-    print("A {} will cost {}".format(price_per_100))
-
-  if amount == 700:
-    price_per_100ml * 7
-    print("A {} will cost {}".format(price_per_100))
-
-  if amount == 800:
-    price_per_100ml * 8
-    print("A {} will cost {}".format(price_per_100))
-
-  if amount == 900:
-    price_per_100ml * 9
-    print("A {} will cost {}".format(price_per_100))
-
-  if amount == 1000:
-    price_per_100ml * 10
-    print("A {} will cost {}".format(price_per_100))
+    else:
+      print(amount_error)
