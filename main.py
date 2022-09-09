@@ -1,7 +1,7 @@
 # Error Messages
-budget_error = "please enter a number that is greater than 0 but less than 10000"
+budget_error = "please enter a number that is greater or equal to 0.1 but less than 10000"
 
-amount_error = "please enter a number that is greater then 0 but less than or equal to 10000\n"
+amount_error = "please enter a number that is greater than 1 but less than or equal to 10000\n"
 
 # Functions
 
@@ -25,7 +25,7 @@ def budget_checker (question, low, high):
     try:
       response = float(input(question))
       # If the user types a whole number between 1 and 1000, program continues 
-      if 0 < response <= 10000:
+      if 0.1 <= response <= 10000:
         rounded_budget = round(response, 2)
         return rounded_budget
       else:
@@ -40,7 +40,7 @@ def drink_or_chocolate(question):
   while not valid:
     user_response = input (question) .lower()
 
-    if user_response == "chocolate" or user_response  == "c":   
+    if user_response == "chocolate" or user_response  == "c" or user_response  == "choc":   
         user_response = "chocolate"
         return user_response
 
@@ -58,7 +58,7 @@ def item_amount (question, low, high):
     try:
       response = float(input(question))
       # If the user types a whole number between 1 and 10000, program continues 
-      if 0 < response <= 10000:
+      if 1 < response <= 10000:
         return response
       else:
         # If the user types a number with a decimal or a number that is written in letters, print an error
@@ -87,7 +87,7 @@ def menu():
   print("| Kit Kat                    |  $3.38  |")
   print()
 
-def recomended_item():
+def recommended_item():
   # Best item = user's budget divided by $0.27
   best_item_coca_cola = budget/0.27 
   # when the budget has been divided, if the answer is 10000, 1000, 100, or 10, tell the user the best item to purchase was coca cola. 
@@ -111,8 +111,6 @@ def recomended_item():
   # when the budget has been divided, if the answer is 10000, 1000, 100, or 10, tell the user the best item to purchase was Monster 
   if best_item_monster == 10000 or best_item_monster == 1000 or best_item_monster == 100 or best_item_monster == 10 :
     print("The best thing to purchase was Monster")
-
-######################################################
 
   # Best item = user's budget divided by $2.78
   best_item_m_and_ms = budget/2.78 
@@ -144,14 +142,13 @@ def recomended_item():
   if best_item_kit_kat == 10000 or best_item_kit_kat == 1000 or best_item_kit_kat == 100 or best_item_kit_kat == 10 :
     print("The best thing to purchase was kit kat")
 
-
-    
 # list of drinks and prices.  The purpose of this dictionary is to tell the program what the valid answers are.
-drink_list = { "coca cola": 0.27, "sprite": 0.11, "pepsi": 0.20, "red bull": 0.80, "monster":0.70, "v": 0.60
+drink_list = { "coca cola" : 0.27, "sprite" : 0.11, "pepsi" : 0.20, "red bull" : 0.80, "monster" :0.70, "v" : 0.60
 }
 
+# list of chocolates and prices.  The purpose of this dictionary is to tell the program what the valid answers are.
 chocolate_list = {
-  "m&ms": 2.78, "cadbury": 1.83,"skittles": 2.71, "snickers": 1.80, "mars": 3.83,"kit kat": 3.38
+  "m&ms" : 2.78, "cadbury" : 1.83,"skittles" : 2.71, "snickers" : 1.80, "mars" : 3.83,"kit kat" : 3.38
 }
 
 # Main routine starts here
@@ -163,7 +160,7 @@ name = not_blank ("What is your amazing name: ")
 print("Kia ora", name)
 
 # Ask user what their budget is     
-budget = budget_checker ("What will your budget be? ", 0, 10000)
+budget = budget_checker ("What will your budget be? ", 0.1, 10000)
 print("You will be spending ${}".format(budget))
 print()
 
@@ -183,7 +180,7 @@ if choice == "drink":
   # loop the code until a break is met
   while True:
     # asks user what drink they would like
-    drink_choice = input("Please enter the drink you would like to purchase: " )
+    drink_choice = input("Please enter the drink you would like to purchase: " ).lower()
 
     # if the user's chosen drink is in the drink_list dictionary above, tell the user their chosen drink
     if drink_choice.lower() in drink_list:
@@ -207,7 +204,7 @@ if choice == "chocolate":
   # loop the code until a break is met
   while True:
     # asks user what chocolate they would like
-    chocolate_choice = input("Please enter the chocolate you would like to purchase: " )
+    chocolate_choice = input("Please enter the chocolate you would like to purchase: " ).lower()
 
     # If the user's chosen chocolate is in the chocolate_list dictionary above, tell the user their chosen chocolate
     if chocolate_choice.lower() in chocolate_list:
@@ -230,9 +227,9 @@ if choice =="drink":
   # loop the code until a break is met
   while True:
     # ask the user how many mililitres of their drink they would like
-    amount = item_amount ("How many mililitres of {} would you like?\n".format(drink_choice),100,10000)
+    amount = item_amount ("How many mililitres of {} would you like? You could purchase 10000ml of {} if you have the money\n".format(drink_choice, drink_choice),1 ,10000)
     # if the amount the user is asking for is greater than 0 but less than 10000, program continues
-    if 0 < amount <= 10000:
+    if 0.1 < amount <= 10000:
 
       # calculate the cost of the user's desired amount. So if the user asks for 234ml of pepsi, this equation below will calculate the exact cost of 234ml of pepsi
       paying_amount = amount/100 * price_per_100
@@ -266,7 +263,7 @@ if choice =="drink":
         maximum_amount = budget/price_per_100 *100 -1
         # round maximum amount to 0dp. I did 0dp becuase 
         rounded_maximum_amount = round(maximum_amount, 0)
-        print("We recomend purchasing something around {}ml as that's roughly the maximum amount you can purchase".format(rounded_maximum_amount))
+        print("We recommend purchasing something around {}ml as that's roughly the maximum amount you can purchase".format(rounded_maximum_amount))
         print()
 
     # if the user types an integer that is less than 0 or greater than 1000, print an error
@@ -278,10 +275,10 @@ if choice == "chocolate":
   # loop the code until a break is met
   while True:
     # ask the user how many mililitres of their chocolate they would like
-    amount = item_amount ("How many grams of {} would you like?\n".format(chocolate_choice),0,10000)
+    amount = item_amount ("How many grams of {} would you like? You could purchase 10000g of {} if you have the money\n".format(chocolate_choice, chocolate_choice),1,10000)
     
     # if the amount the user is asking for is greater than 0 but less than 10000, program continues
-    if 0 < amount <= 10000:
+    if 0.1< amount <= 10000:
 
       # calculate the cost of the user's desired amount. So if the user asks for 234ml of pepsi, this equation below will calculate the exact cost of 234ml of pepsi
       paying_amount = amount/100 * price_per_100
@@ -314,14 +311,13 @@ if choice == "chocolate":
         maximum_amount = budget/price_per_100 *100 -1
         # round maximum amount to 0dp. I did 0dp becuase 
         rounded_maximum_amount = round(maximum_amount, 0)
-        print("We recomend purchasing something around {}g as thats roughly the maximum amount you can purchase".format(rounded_maximum_amount))
+        print("We recommend purchasing something around {}g as thats roughly the maximum amount you can purchase".format(rounded_maximum_amount))
         print()
 
     # if the user types an integer that is less than 0 or greater than 1000, print an error
     else:
       print(amount_error)
 
-
-recomended_item()
+recommended_item()
 
 print("Thanks for coming by!")
