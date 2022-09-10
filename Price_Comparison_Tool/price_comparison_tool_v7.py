@@ -1,7 +1,6 @@
 # Error Messages
 budget_error = "Please enter a number that is greater or equal to 0.1 but less than 10000"
 
-
 amount_error = "Please enter a number that is greater than 0.1 but less than or equal to 10000\n"
 
 # Functions
@@ -70,7 +69,9 @@ def item_amount (question, low, high):
         return response
       else:
         # If the user types a number with a decimal or a number that is written in letters, print an error
+        print()
         print(amount_error)
+        print()
     except ValueError:
      print(amount_error)
 

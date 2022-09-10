@@ -50,13 +50,8 @@ print()
 
 # Show user a list of items and ask the user what item they would like
 
-# Recommend what item the user should buy depending on how much money they have. 
-
-# Ask user how much they would like their desired item to weigh
-
 # Ask user how much they would like their desired item to weigh (if they choose a drink, ask how many litres they would like)
 
-# Ask the user how much sugar they would like to have in their item. If they choose a drink, ask how much cafine they would like their item to have. If they say yes, add extra money to the total cost 
 
 # Tell the user how much money it would cost to purchase that item with their desired increments
 
