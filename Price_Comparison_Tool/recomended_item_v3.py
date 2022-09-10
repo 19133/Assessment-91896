@@ -88,59 +88,81 @@ def menu():
   print()
 
 def recommended_item():
-  # Best item = user's budget divided by $0.27
-  best_item_coca_cola = budget/0.27 
-  # when the budget has been divided, if the answer is 10000, 1000, 100, or 10, tell the user the best item to purchase was coca cola. 
-  if best_item_coca_cola == 10000 or best_item_coca_cola == 1000 or best_item_coca_cola == 100 or best_item_coca_cola == 10 :
-    print("The best thing to purchase was Coca Cola")
 
-  # Best item = user's budget divided by $0.11
-  best_item_sprite = budget/0.11 
-  # when the budget has been divided, if the answer is 10000, 1000, 100, or 10, tell the user the best item to purchase was sprite. 
-  if best_item_sprite == 10000 or best_item_sprite == 1000 or best_item_sprite == 100 or best_item_sprite == 10 :
-    print("The best thing to purchase was Sprite")
+  # Recommend Coca Cola = budget / 0.27
+  recommend_coca_cola = budget % 0.27
+  # Round the answer of budget % 0.27.
+  rounded_recommend_coca_cola = round(recommend_coca_cola, 2)
+  # When the budget has been divided, if the remainder is 0, tell the user the best thing to purchase was Coca Cola
+  if (rounded_recommend_coca_cola % 0.27) == 0.0:  
+     print("With your budget of ${}, the best thing to purchase was Coca Cola ".format(budget)) 
 
-  # Best item = user's budget divided by $0.20
-  best_item_pepsi = budget/0.20 
-  # when the budget has been divided, if the answer is 10000, 1000, 100, or 10, tell the user the best item to purchase was pepsi, red bull, v, snickers. 
-  if best_item_pepsi == 10000 or best_item_pepsi == 1000 or best_item_pepsi == 100 or best_item_pepsi == 10 :
-    print("The best thing to purchase was Pepsi, Red Bull, V, or Snickers")
 
-  # Best item = user's budget divided by $0.70
-  best_item_monster = budget/0.70 
-  # when the budget has been divided, if the answer is 10000, 1000, 100, or 10, tell the user the best item to purchase was Monster 
-  if best_item_monster == 10000 or best_item_monster == 1000 or best_item_monster == 100 or best_item_monster == 10 :
-    print("The best thing to purchase was Monster")
+  # Recommend Sprite = budget / 0.11
+  recommend_sprite = budget % 0.11
+  # Round the answer of budget % 0.11.
+  rounded_recommend_sprite = round(recommend_sprite, 2)
+  # When the budget has been divided, if the remainder is 0, tell the user the best thing to purchase was sprite
+  if (rounded_recommend_sprite % 0.11) == 0.0:  
+     print("With your budget of ${}, the best thing to purchase was Sprite ".format(budget))   
 
-  # Best item = user's budget divided by $2.78
-  best_item_m_and_ms = budget/2.78 
-  # when the budget has been divided, if the answer is 10000, 1000, 100, or 10, tell the user the best item to purchase was m&ms 
-  if best_item_m_and_ms == 10000 or best_item_m_and_ms == 1000 or best_item_m_and_ms == 100 or best_item_m_and_ms == 10 :
-    print("The best thing to purchase was m&ms")
+  # Recommend pepsi = budget / 0.20
+  recommend_pepsi = budget % 0.20
+  # Round the answer of budget % 0.20.
+  rounded_recommend_pepsi = round(recommend_pepsi, 2)
+  # When the budget has been divided, if the remainder is 0, tell the user the best thing to purchase was pepsi
+  if (rounded_recommend_pepsi % 0.20) == 0.0:  
+    # Red Bull, V, and Snickers are also recommended items because the prices for those items are divisable by 0.20 as well. (redbull is 0.80, v is 0.70, snickers is 1.80)
+     print("With your budget of ${}, the best thing to purchase was Pepsi, Red Bull, V, or Snickers".format(budget))   
 
-  # Best item = user's budget divided by $1.83
-  best_item_cadbury = budget/1.83 
-  # when the budget has been divided, if the answer is 10000, 1000, 100, or 10, tell the user the best item to purchase was cadbury 
-  if best_item_cadbury == 10000 or best_item_cadbury == 1000 or best_item_cadbury == 100 or best_item_cadbury == 10 :
-    print("The best thing to purchase was cadbury")
 
-  # Best item = user's budget divided by $2.71
-  best_item_skittles = budget/2.71 
-  # when the budget has been divided, if the answer is 10000, 1000, 100, or 10, tell the user the best item to purchase was skittles
-  if best_item_skittles == 10000 or best_item_skittles == 1000 or best_item_skittles == 100 or best_item_skittles == 10 :
-    print("The best thing to purchase was skittles")
+  # Recommend monster = budget / 0.70
+  recommend_monster = budget % 0.70
+  # Round the answer of budget % 0.70.
+  rounded_recommend_monster = round(recommend_monster, 2)
+  # When the budget has been divided, if the remainder is 0, tell the user the best thing to purchase was monster
+  if (rounded_recommend_monster % 0.70) == 0.0:  
+     print("With your budget of ${}, the best thing to purchase was Monster".format(budget))  
 
-  # Best item = user's budget divided by $3.83
-  best_item_mars = budget/3.83 
-  # when the budget has been divided, if the answer is 10000, 1000, 100, or 10, tell the user the best item to purchase was mars
-  if best_item_mars == 10000 or best_item_mars == 1000 or best_item_mars == 100 or best_item_mars == 10 :
-    print("The best thing to purchase was mars")
+  # Recommend m&ms = budget / 2.78
+  recommend_m_and_ms = budget % 2.78
+  # Round the answer of budget % 2.78
+  rounded_recommend_m_and_ms = round(recommend_m_and_ms, 2)
+  # When the budget has been divided, if the remainder is 0, tell the user the best thing to purchase was M&Ms
+  if (rounded_recommend_m_and_ms % 2.78) == 0.0:  
+     print("With your budget of ${}, the best thing to purchase was M&Ms".format(budget))  
 
-  # Best item = user's budget divided by $3.38
-  best_item_kit_kat = budget/3.38 
-  # when the budget has been divided, if the answer is 10000, 1000, 100, or 10, tell the user the best item to purchase was kit kat
-  if best_item_kit_kat == 10000 or best_item_kit_kat == 1000 or best_item_kit_kat == 100 or best_item_kit_kat == 10 :
-    print("The best thing to purchase was kit kat")
+  # Recommend cadbury = budget / 1.83
+  recommend_cadbury = budget % 1.83
+  # Round the answer of budget % 1.83
+  rounded_recommend_cadbury = round(recommend_cadbury, 2)
+  # When the budget has been divided, if the remainder is 0, tell the user the best thing to purchase was cadbury
+  if (rounded_recommend_cadbury % 1.83) == 0.0:  
+     print("With your budget of ${}, the best thing to purchase was Cadbury".format(budget))   
+
+  # Recommend skittles = budget / 2.71
+  recommend_skittles = budget % 2.71
+  # Round the answer of budget % 2.71
+  rounded_recommend_skittles = round(recommend_skittles, 2)
+  # When the budget has been divided, if the remainder is 0, tell the user the best thing to purchase was skittles
+  if (rounded_recommend_skittles % 2.71) == 0.0:  
+     print("With your budget of ${}, the best thing to purchase was Skittles".format(budget)) 
+
+  # Recommend Mars = budget / 3.83
+  recommend_mars = budget % 3.83
+  # Round the answer of budget % 3.83
+  rounded_recommend_mars = round(recommend_mars, 2)
+  # When the budget has been divided, if the remainder is 0, tell the user the best thing to purchase was Mars
+  if (rounded_recommend_mars % 3.83) == 0.0:  
+     print("With your budget of ${}, the best thing to purchase was Mars".format(budget)) 
+
+  # Recommend Kit Kat = budget / 3.38
+  recommend_kit_kat = budget % 3.38
+  # Round the answer of budget % 3.38
+  rounded_recommend_kit_kat = round(recommend_kit_kat, 2)
+  # When the budget has been divided, if the remainder is 0, tell the user the best thing to purchase was Kit Kat
+  if (rounded_recommend_kit_kat % 3.38) == 0.0:  
+     print("With your budget of ${}, the best thing to purchase was Kit Kat".format(budget)) 
 
 # list of drinks and prices.  The purpose of this dictionary is to tell the program what the valid answers are.
 drink_list = { "coca cola" : 0.27, "sprite" : 0.11, "pepsi" : 0.20, "red bull" : 0.80, "monster" :0.70, "v" : 0.60
