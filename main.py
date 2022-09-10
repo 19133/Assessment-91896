@@ -1,7 +1,8 @@
 # Error Messages
-budget_error = "please enter a number that is greater or equal to 0.1 but less than 10000"
+budget_error = "Please enter a number that is greater or equal to 0.1 but less than 10000"
 
-amount_error = "please enter a number that is greater than 1 but less than or equal to 10000\n"
+
+amount_error = "Please enter a number that is greater than 0.1 but less than or equal to 10000\n"
 
 # Functions
 
@@ -15,6 +16,7 @@ def not_blank(question):
     if response != "":
       return response
     else:
+      print()
       print("Sorry - this can't be blank")
       print()
 
@@ -30,9 +32,13 @@ def budget_checker (question, low, high):
         return rounded_budget
       else:
         # If the user types a number with a decimal or a number that is written in letters, print an error
+        print()
         print(budget_error)
+        print()
     except ValueError:
+     print()
      print(budget_error)
+     print()
       
 # drink or chocolate
 def drink_or_chocolate(question):
@@ -49,7 +55,9 @@ def drink_or_chocolate(question):
         return user_response 
 
     else:
+      print()
       print("Please enter drink or chocolate") 
+      print()
 
 # Amount of item
 def item_amount (question, low, high):
@@ -186,7 +194,7 @@ budget = budget_checker ("What will your budget be? ", 0.1, 10000)
 print("You will be spending ${}".format(budget))
 print()
 
-# This variable is in charge of holding the price per 100ml/g of the user's chosen drink or chosen chocolate. The amount will change from 0 when the user has chosen their drink. e.g. If the user chooses coca cola, the price should change from 0 to 0.27 per 100ml. 
+# This variable is in charge of holding the price per 100ml/g of the user's chosen drink or chosen chocolate. The amount will change from 0 when the user has chosen their drink/chocolate. e.g. If the user chooses coca cola, the price should change from 0 to 0.27 per 100ml. 
 price_per_100 = 0
 
 # Display the list of drinks
@@ -218,6 +226,7 @@ if choice == "drink":
 
     # if the user inputs a value that is not on the drink menu/not in the drink_list dictionary, ask the user to enter a drink that is on the menu and continue the loop
     else:
+      print()
       print("Please enter a {} that is on the menu".format(choice))
       print()
 
@@ -241,6 +250,7 @@ if choice == "chocolate":
       break
     # if the user inputs a value that is not on the chocolate menu/not in the chocolate_list dictionary, ask the user to enter a drink that is on the menu and continue the loop
     else:
+      print()
       print("Please enter a {} that is on the menu".format(choice))
       print()
 
@@ -291,7 +301,9 @@ if choice =="drink":
 
     # if the user types an integer that is less than 0 or greater than 1000, print an error
     else:
+      print()
       print(amount_error)
+      print()
 
 # execute the lines of code below if the user chose chocolate.
 if choice == "chocolate":
@@ -340,7 +352,9 @@ if choice == "chocolate":
 
     # if the user types an integer that is less than 0 or greater than 1000, print an error
     else:
+      print()
       print(amount_error)
+      print()
 
 recommended_item()
 
