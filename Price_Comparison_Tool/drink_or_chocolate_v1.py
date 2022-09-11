@@ -14,6 +14,7 @@ def drink_or_chocolate(question):
         return user_response 
 
     else:
+      print()
       print("Please enter drink or chocolate")
       print()
 

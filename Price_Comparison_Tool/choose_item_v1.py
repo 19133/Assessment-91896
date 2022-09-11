@@ -1,3 +1,22 @@
+# Drink or chocolate function
+def drink_or_chocolate(question):
+  valid=False
+  while not valid:
+    user_response = input (question) .lower()
+
+    if user_response == "chocolate" or user_response  == "c":   
+        user_response = "chocolate"
+        return user_response
+
+    elif user_response == "drink" or user_response  == "d":
+        user_response = "drink"
+        return user_response 
+
+    else:
+      print()
+      print("Please enter drink or chocolate")
+      print()
+
 # Menu with prices
 def menu():
   print("Here's the Menu")
@@ -21,6 +40,9 @@ def menu():
   print()
 
 menu()
+
+choice = drink_or_chocolate("Would you like a drink or a chocolate")
+print("You will be purchasing a {}".format(choice))
 
 if choice == "drink":
   drink_choice = input("Please enter the drink you would like to purchase: ")
@@ -50,30 +72,23 @@ if choice == "drink":
 if choice == "chocolate":
   chocolate_choice = input("Please enter the drink you would like to purchase: ")
     
-  if chocolate_choice == "coca ":
-    print("A {} beverage will cost $0.27 per 100ml".format(drink_choice)
+  if chocolate_choice == "m&ms ":
+    print("A {} beverage will cost $2.78 per 100ml".format(drink_choice)
   
-  if chocolate_choice == "sprite":
-    print("A {} beverage will cost $0.27 per 100ml".format(drink_choice) 
+  if chocolate_choice == "cadbury":
+    print("A {} beverage will cost $1.83 per 100ml".format(drink_choice) 
   
-  if chocolate_choice == "pepsi":
-    print("A {} beverage will cost $0.27 per 100ml".format(drink_choice) 
+  if chocolate_choice == "skittles":
+    print("A {} beverage will cost $2.71 per 100ml".format(drink_choice) 
   
-  if chocolate_choice == "red bull":
-    print("A {} beverage will cost $0.27 per 100ml".format(drink_choice) 
+  if chocolate_choice == "snickers":
+    print("A {} beverage will cost $1.80 per 100ml".format(drink_choice) 
   
-  if chocolate_choice == "monster":
-    print("A {} beverage will cost $0.27 per 100ml".format(drink_choice) 
+  if chocolate_choice == "mars":
+    print("A {} beverage will cost $3.83 per 100ml".format(drink_choice) 
   
-  if drink_choice == "coca cola":
-    print("A {} beverage will cost $0.27 per 100ml".format(drink_choice) 
-  
-  if drink_choice == "coca cola":
-    print("A {} beverage will cost $0.27 per 100ml".format(drink_choice) 
-  
-  if drink_choice == "coca cola":
-    print("A {} beverage will cost $0.27 per 100ml".format(drink_choice) 
-    
+  if drink_choice == "kit kat":
+    print("A {} beverage will cost $3.38 per 100ml".format(drink_choice) 
   
   else:
     print("Please enter a {} that is on the menu".format(choice))

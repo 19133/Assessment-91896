@@ -20,8 +20,6 @@ def menu():
   print("| Kit Kat                    |  $3.38  |")
   print()
 
-
-  
 # Functions
 
 def drink_or_chocolate(question):
@@ -38,6 +36,7 @@ def drink_or_chocolate(question):
         return user_response 
 
     else:
+      print()
       print("Please enter drink or chocolate")
       print()
 
