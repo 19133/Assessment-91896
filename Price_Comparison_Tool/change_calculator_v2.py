@@ -1,7 +1,5 @@
-purchasing_price = 10.2
-budget = 10
-change = 0
+purchasing_price = 10
+budget = 15
 
-
-change = purchasing_price - budget
+change = budget - purchasing_price
 print(change)

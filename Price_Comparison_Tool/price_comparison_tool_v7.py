@@ -1,6 +1,7 @@
 # Error Messages
-budget_error = "Please enter a number that is greater than or equal to 0.1 but less than 10000"
+budget_error = "Please enter a number that is greater than or equal to 0.1 but less than or equal to 10000"
 
+# Amount Error
 amount_error = "Please enter a number that is greater than 1 but less than or equal to 10000\n"
 
 # Functions
@@ -280,6 +281,7 @@ if choice =="drink":
         change = budget - rounded_paying_amount
         # round the change
         rounded_change = round(change, 2)
+        print()
         print("{}ml of {} will cost ${}".format(rounded_amount, drink_choice, rounded_paying_amount))
         # if the change == 0, don't tell the user their change. 
         if rounded_change == 0:
@@ -332,6 +334,7 @@ if choice == "chocolate":
         change = budget - rounded_paying_amount
         # round the change
         rounded_change = round(change, 2)
+        print()
         print("{}g of {} will cost ${}".format(rounded_amount, chocolate_choice, rounded_paying_amount))
         # if the change == 0, don't tell the user their change.
         if rounded_change == 0:

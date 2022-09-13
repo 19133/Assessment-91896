@@ -51,7 +51,7 @@ chocolate_list = {
 
 # main routine starts here
 
-choice = drink_or_chocolate("Would you like a drink or a chocolate")
+choice = drink_or_chocolate("Would you like a drink or a chocolate\n")
 print("You will be purchasing a {}".format(choice))
 
 if choice == "chocolate":
@@ -79,11 +79,11 @@ if choice == "drink":
     if drink_choice.lower() in drink_list:
       print("You will be purchasing {}".format(drink_choice)) 
 
-      # the price per 100ml is equal to the value of the key choosen. So if the user choose coca cola, the program will go to the dictionary and make the value of price_per_100 equal to the cost per 100ml of coca cola, so 0.27
+      # the price per 100 is equal to the value of the key choosen. So if the user choose coca cola, the program will go to the dictionary and make the value of price_per_100 equal to the cost per 100 of coca cola, so 0.27
       price_per_100 = drink_list[drink_choice]
 
       # Tell the user how much their desired beverage will cost
-      print("A {} beverage will cost ${} per 100ml".format(drink_choice, price_per_100)) 
+      print("A {} beverage will cost ${} per 100".format(drink_choice, price_per_100)) 
       break
     else:
       # if the user doesn't type an item that is on the menu, tell the user to enter an item that is on the menu
@@ -93,45 +93,45 @@ if choice == "drink":
 if choice == "drink":
   amount = input("How many mililitres of {} would you like?\n".format(drink_choice),0,10000)
   if amount == 100:
-    price_per_100ml * 1
-    print("A {} will cost {}".format(price_per_100))
+    price_per_100 * 1
+    print("A {} will cost {}".format(drink_choice, price_per_100))
 
   if amount == 200:
-    price_per_100ml * 2
-    print("A {} will cost {}".format(price_per_100))
+    price_per_100 * 2
+    print("A {} will cost {}".format(drink_choice, price_per_100))
     
   if amount == 300:
-    price_per_100ml * 3
-    print("A {} will cost {}".format(price_per_100))
+    price_per_100 * 3
+    print("A {} will cost {}".format(drink_choice,price_per_100))
 
   if amount == 400:
-    price_per_100ml * 4
-    print("A {} will cost {}".format(price_per_100))
+    price_per_100 * 4
+    print("A {} will cost {}".format(drink_choice, price_per_100))
 
   if amount == 400:
-    price_per_100ml * 4
-    print("A {} will cost {}".format(price_per_100))
+    price_per_100 * 4
+    print("A {} will cost {}".format(drink_choice, price_per_100))
 
   if amount == 500:
-    price_per_100ml * 5
-    print("A {} will cost {}".format(price_per_100))
+    price_per_100 * 5
+    print("A {} will cost {}".format(drink_choice, price_per_100))
 
   if amount == 600:
-    price_per_100ml * 6
-    print("A {} will cost {}".format(price_per_100))
+    price_per_100 * 6
+    print("A {} will cost {}".format(drink_choice, price_per_100))
 
   if amount == 700:
-    price_per_100ml * 7
-    print("A {} will cost {}".format(price_per_100))
+    price_per_100 * 7
+    print("A {} will cost {}".format(drink_choice, price_per_100))
 
   if amount == 800:
-    price_per_100ml * 8
-    print("A {} will cost {}".format(price_per_100))
+    price_per_100 * 8
+    print("A {} will cost {}".format(drink_choice, price_per_100))
 
   if amount == 900:
-    price_per_100ml * 9
-    print("A {} will cost {}".format(price_per_100))
+    price_per_100 * 9
+    print("A {} will cost {}".format(drink_choice, price_per_100))
 
   if amount == 1000:
-    price_per_100ml * 10
-    print("A {} will cost {}".format(price_per_100))
+    price_per_100 * 10
+    print("A {} will cost {}".format(drink_choice, price_per_100))
